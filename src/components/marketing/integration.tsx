@@ -17,12 +17,13 @@ const Integration = () => {
 
     const getPositionClasses = (position: string) => {
         switch (position) {
-            case "left-3": return "-translate-x-[285px]";
-            case "left-2": return "-translate-x-[210px]";
-            case "left-1": return "-translate-x-[125px]";
-            case "right-1": return "translate-x-[125px]";
-            case "right-2": return "translate-x-[210px]";
-            case "right-3": return "translate-x-[285px]";
+            // Desktop: horizontal, Mobile: vertical
+            case "left-3": return "md:-translate-x-[285px] -translate-y-[285px] md:translate-y-0 ";
+            case "left-2": return "md:-translate-x-[210px] -translate-y-[210px] md:translate-y-0 ";
+            case "left-1": return "md:-translate-x-[125px] -translate-y-[125px] md:translate-y-0 ";
+            case "right-1": return "md:translate-x-[125px] translate-y-[125px] md:translate-y-0 ";
+            case "right-2": return "md:translate-x-[210px] translate-y-[210px] md:translate-y-0 ";
+            case "right-3": return "md:translate-x-[285px] translate-y-[285px] md:translate-y-0 ";
             default: return "";
         }
     };
@@ -48,12 +49,12 @@ const Integration = () => {
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20 scale-">
             <Container className="relative">
-                <div className="relative flex flex-col lg:hidden items-center justify-center overflow-visible">
+                <div className="relative hidden items-center justify-center overflow-visible">
                     <div className="absolute top-1/2 -translate-y-1/2 right-1/4 w-3/5 h-14 lg:h-20 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full -rotate-12 blur-[6.5rem] -z-10"></div>
 
                     <div className="max-w-sm w-full h-auto mx-auto mt-8">
                         <Image
-                            src="/images/integration.svg"
+                            src="/images/logo.webp"
                             alt="Integration"
                             width={1000}
                             height={1000}
@@ -79,7 +80,7 @@ const Integration = () => {
             </div> */}
 
             <Container delay={0.3}>
-                <div className="relative hidden lg:flex items-center justify-center overflow-visible">
+                <div className="relative flex items-center justify-center overflow-visible">
                     <div className="absolute top-1/2 -translate-y-1/2 right-1/4 w-3/5 h-14 lg:h-20 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full -rotate-12 blur-[6.5rem] -z-10"></div>
 
                     <div className="relative flex h-dvh w-full flex-col items-center justify-center overflow-visible">

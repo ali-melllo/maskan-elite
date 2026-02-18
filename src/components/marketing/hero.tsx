@@ -53,7 +53,7 @@ const Hero = () => {
                         </button>
                     </Container>
                     <Container delay={0.15}>
-                        <h1 className="text-4xl md:text-4xl text-nowrap lg:text-6xl font-bold text-center !leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-2xl md:text-4xl text-nowrap lg:text-6xl font-bold text-center !leading-tight max-w-4xl mx-auto">
                             The Gated {" "}
                             <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
                                 Ecosystem {" "}
@@ -67,7 +67,7 @@ const Hero = () => {
                         </p>
                     </Container>
 
-                    <Container delay={0.3} className="relative ">
+                    <Container delay={0.3} className="relative px-0">
                         <GlobalDatabase />
                     </Container>
 
