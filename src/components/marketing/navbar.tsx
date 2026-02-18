@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
-import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -38,12 +37,12 @@ const Navbar = () => {
                     </div> */}
 
                     <div className="flex items-center gap-4">
-                        <Link href="#" className="hidden lg:block">
+                        <Link href="#" className="block">
                             <Button disabled variant="blue">
                                 Join Our Community
                             </Button>
                         </Link>
-                        <MobileMenu />
+                        {/* <MobileMenu /> */}
                     </div>
                 </div>
             </Wrapper>

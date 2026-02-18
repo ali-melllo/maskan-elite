@@ -8,7 +8,7 @@ import LanguageSupport from "@/components/marketing/lang-support";
 
 const HomePage = () => {
     return (
-        <Wrapper className="py-20 pt-0 relative">
+        <Wrapper className="py-20 pt-0 relative overflow-hidden">
             <Hero />
 
             <Features />

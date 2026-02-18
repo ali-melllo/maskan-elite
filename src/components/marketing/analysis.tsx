@@ -1,4 +1,4 @@
-import { DownloadIcon, FilterIcon, TrendingUpIcon, ShieldCheck, Users, Building } from "lucide-react";
+import { DownloadIcon, FilterIcon, TrendingUpIcon, ShieldCheck, Award, Crown, Briefcase, Zap, Cpu, Landmark, Tag } from "lucide-react";
 import Container from "../global/container";
 import { Button } from "../ui/button";
 import { MagicCard } from "../ui/magic-card";
@@ -30,7 +30,7 @@ const Analysis = () => {
                             <div className="absolute bottom-0 right-0 bg-blue-500 w-1/4 h-1/4 blur-[8rem] z-20"></div>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-2">
-                                    <Users className="size-5 text-primary" />
+                                    <Award className="size-5 text-primary" />
                                     <h3 className="text-xl font-semibold">
                                         Elite Athlete Network
                                     </h3>
@@ -43,11 +43,11 @@ const Analysis = () => {
                                     <div className="flex justify-between items-baseline">
                                         <div>
                                             <div className="text-3xl font-semibold">
-                                                47
+                                                86
                                             </div>
                                             <div className="text-sm text-green-500 flex items-center gap-1 mt-2">
                                                 <ShieldCheck className="w-4 h-4" />
-                                                Active Members
+                                                Active Members | 8 Nationalities
                                             </div>
                                         </div>
                                         <div className="flex gap-2">
@@ -62,23 +62,35 @@ const Analysis = () => {
 
                                     <div className="space-y-2">
                                         <div className="grid grid-cols-4 text-sm text-muted-foreground py-2">
+                                            <div>Athlete</div>
                                             <div>Sport</div>
-                                            <div>Status</div>
-                                            <div>Market</div>
-                                            <div>ROI</div>
+                                            <div>Asset Type</div>
+                                            <div>Deployed</div>
                                         </div>
                                         {[
-                                            { name: "Football (EPL)", status: "Active", reach: "£8.2M", roi: "+12%" },
-                                            { name: "Boxing (Elite)", status: "Active", reach: "£12M", roi: "+24%" },
-                                            { name: "Basketball (NBA)", status: "Pending", reach: "£5.4M", roi: "--" },
-                                        ].map((campaign) => (
-                                            <div key={campaign.name} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
-                                                <div>{campaign.name}</div>
-                                                <div>{campaign.status}</div>
-                                                <div>{campaign.reach}</div>
-                                                <div className="font-semibold">{campaign.roi}</div>
+                                            { name: "van Dijk", sport: "Football", asset: "Real Estate", deployed: "€4.2M" },
+                                            { name: "F. Klaassen", sport: "Football", asset: "Tech Startup", deployed: "€1.8M" },
+                                            { name: "S. de Vries", sport: "Kickboxing", asset: "Brand Equity", deployed: "€850K" },
+                                            { name: "L. Nmecha", sport: "Football", asset: "Energy Venture", deployed: "€2.3M" },
+                                        ].map((athlete) => (
+                                            <div key={athlete.name} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
+                                                <div className="font-medium">{athlete.name}</div>
+                                                <div className="text-muted-foreground">{athlete.sport}</div>
+                                                <div>
+                                                    {athlete.asset === "Real Estate" && <Landmark className="w-3 h-3 inline mr-1" />}
+                                                    {athlete.asset === "Tech Startup" && <Cpu className="w-3 h-3 inline mr-1" />}
+                                                    {athlete.asset === "Brand Equity" && <Tag className="w-3 h-3 inline mr-1" />}
+                                                    {athlete.asset === "Energy Venture" && <Zap className="w-3 h-3 inline mr-1" />}
+                                                    {athlete.asset}
+                                                </div>
+                                                <div className="text-primary">{athlete.deployed}</div>
                                             </div>
                                         ))}
+                                    </div>
+                                    
+                                    <div className="flex items-center gap-2 pt-2 text-xs text-muted-foreground border-t border-border/50">
+                                        <Crown className="w-3 h-3" />
+                                        <span>Total Capital Deployed: <span className="text-primary font-semibold">€18.7M</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -97,22 +109,22 @@ const Analysis = () => {
                             <div className="absolute bottom-0 right-0 bg-sky-500 w-1/4 h-1/4 blur-[8rem] z-20"></div>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-2">
-                                    <Building className="size-5 text-primary" />
+                                    <Briefcase className="size-5 text-primary" />
                                     <h3 className="text-xl font-semibold">
                                         Institutional Portfolio
                                     </h3>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                    Off-market real estate and assets vetted for long-term wealth preservation.
+                                    Off-market assets vetted for long-term wealth preservation.
                                 </p>
 
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-baseline">
                                         <div>
-                                            <div className="text-3xl font-semibold">£124M</div>
+                                            <div className="text-3xl font-semibold">€22.4M</div>
                                             <div className="text-sm text-green-500 flex items-center gap-1 mt-2">
                                                 <TrendingUpIcon className="w-4 h-4" />
-                                                Assets Under Management
+                                                AUM | 17 Assets | 2 Hubs
                                             </div>
                                         </div>
                                         <div className="flex gap-2">
@@ -125,26 +137,34 @@ const Analysis = () => {
                                         </div>
                                     </div>
 
-                                    {/* Audience Table */}
+                                    {/* Assets Table */}
                                     <div className="space-y-2">
                                         <div className="grid grid-cols-4 text-sm text-muted-foreground py-2">
-                                            <div>Asset Class</div>
-                                            <div>Location</div>
+                                            <div>Asset</div>
+                                            <div>Type</div>
                                             <div>Value</div>
-                                            <div>Yield</div>
+                                            <div>Projected ROI</div>
                                         </div>
                                         {[
-                                            { channel: "Commercial RE", users: "London", sessions: "£42M", rate: "6.2%" },
-                                            { channel: "Luxury Residential", users: "Dubai", sessions: "£38M", rate: "4.8%" },
-                                            { channel: "Development", users: "MIA", sessions: "£44M", rate: "9.1%" },
-                                        ].map((metric) => (
-                                            <div key={metric.channel} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
-                                                <div>{metric.channel}</div>
-                                                <div>{metric.users}</div>
-                                                <div>{metric.sessions}</div>
-                                                <div className="font-semibold">{metric.rate}</div>
+                                            { name: "Zuidas Office", type: "Real Estate", value: "€8.2M", roi: "43%" },
+                                            { name: "Solar Farm", type: "Energy", value: "€5.7M", roi: "47%" },
+                                            { name: "FinTech App", type: "Technology", value: "€3.4M", roi: "51%" },
+                                            { name: "Sportswear Label", type: "Brand", value: "€2.1M", roi: "44%" },
+                                            { name: "Warehouse Complex", type: "Real Estate", value: "€6.8M", roi: "39%" },
+                                            { name: "Battery Storage", type: "Energy", value: "€4.2M", roi: "48%" },
+                                        ].map((asset, i) => (
+                                            <div key={i} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
+                                                <div className="font-medium">{asset.name}</div>
+                                                <div className="text-muted-foreground">{asset.type}</div>
+                                                <div>{asset.value}</div>
+                                                <div className="text-green-500 font-semibold">{asset.roi}</div>
                                             </div>
                                         ))}
+                                    </div>
+                                    
+                                    <div className="flex items-center gap-2 pt-2 text-xs text-muted-foreground border-t border-border/50">
+                                        <TrendingUpIcon className="w-3 h-3" />
+                                        <span>Weighted Avg. ROI: <span className="text-green-500 font-semibold">46.2%</span> | Holdings: Amsterdam · Frankfurt</span>
                                     </div>
                                 </div>
                             </div>
