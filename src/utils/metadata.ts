@@ -30,7 +30,6 @@ export const generateMetadata = ({
             media: "(prefers-color-scheme: dark)",
         },
     ],
-    noIndex = false,
     keywords = [
         "AI marketing automation",
         "social media marketing",
@@ -44,7 +43,6 @@ export const generateMetadata = ({
         "digital marketing tools"
     ],
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
-    type = "website",
 }: MetadataProps = {}): Metadata => {
     const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://vertra-ai.vercel.app");
 
@@ -65,5 +63,19 @@ export const generateMetadata = ({
             telephone: false,
         },
         icons,
+        openGraph: {
+            title: title,
+            description: description,
+            url: metadataBase,
+            siteName: "Maskan Elite",
+            images: [
+                {
+                    url: "/images/logo.webp",
+                    width: 1200,
+                    height: 630,
+                    alt: "MAskan Elite",
+                },
+            ],
+        }
     };
 };
