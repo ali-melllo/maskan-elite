@@ -57,10 +57,10 @@ export const GlobalDatabase: FunctionComponent = () => {
   ]
 
   return (
-    <div className="px-3 ">
+    <div className="md:px-3 ">
       <section
         aria-labelledby="global-database-title"
-        className="relative mx-auto flex w-full max-w-6xl flex-col items-center justify-center overflow-hidden rounded-3xl pt-12 shadow-xl "
+        className="relative mx-auto flex w-full max-w-6xl flex-col items-center justify-center overflow-hidden rounded-3xl md:pt-12 shadow-xl "
       >
         <div className="absolute top-[17rem] size-[40rem] rounded-full bg-indigo-800 blur-3xl md:top-[20rem]" />
         <div className="z-10 inline-block rounded-lg px-3 font-semibold uppercase leading-4 tracking-tight sm:text-sm">
